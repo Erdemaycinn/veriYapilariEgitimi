@@ -36,8 +36,4 @@ int main(){
 
 
 
-
-    printf("\n\n\n [] operandi aslinda icerisindeki sayiyi pointera ekleyip degeri yazmakdan baska bisey yapmaz:");
-    printf("\n\n [] operandi ile arr1 in ilk elemani:\n\t%d",arr1[0]);
-    printf("\n\n dogrudan adresi ile arr1 in ilk elemani:\n\t%d\n\n",*arr1);
 }
