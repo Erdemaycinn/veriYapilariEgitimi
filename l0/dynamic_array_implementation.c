@@ -26,7 +26,7 @@ int dSArrayGrow(dSArray *arr) {
 }
 
 int dSArrayAppendString(dSArray *arr, char *string) {
-    while (arr->size < arr->curr + sizeof(char)) {
+    while (arr->size < arr->curr + strlen(string)) {
         if (!dSArrayGrow(arr))
         return 0;
     }
@@ -43,6 +43,11 @@ dSArray* newDSArray(){
     arr->curr = 0;
     arr->ptr = (char*) NULL;
     return arr;
+}
+
+dSArray* cutArray(dSArray* array,int start,int end){
+    char temp[1000];
+    memcpy(temp, array->ptr + end, strlen(array->ptr[end]));
 }
 
 int main() { 
