@@ -45,18 +45,17 @@ int addToStart(linkedList* list, int degisken){
 
 
 int addToIndex(linkedList* list, int index, int degisken){
-    
+
     if (index < 0 || index > list->boyut)
         return 0;
     if(index == 0)
         return addToStart(list, degisken);
-    
+
     node* suankiNode = list->baslangic;
     index--;
     while(index-- > 0){
         suankiNode = suankiNode->siradaki;
     }
-    
 
     node* yeniNode = malloc(sizeof(node));
     if (yeniNode == NULL)
@@ -66,6 +65,17 @@ int addToIndex(linkedList* list, int index, int degisken){
     suankiNode->siradaki = yeniNode;
     list->boyut++;
     return 1;
+}
+void reverseLinkedList(linkedList* list){
+    node* next = list->baslangic;
+    node* temp = NULL;
+
+    while (next != NULL) {
+        temp = next;
+        next = next->siradaki;
+        next->siradaki = temp;
+
+    }
 }
 
 int addToEnd(linkedList* list, int degisken){
